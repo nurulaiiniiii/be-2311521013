@@ -12,6 +12,18 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// GET /
+app.get('/', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Backend is running',
+    student: {
+      name: 'Nurul Aini',
+      nim: '2311521013'
+    }
+  });
+});
+
 // GET /health
 app.get('/health', async (req, res) => {
   try {
